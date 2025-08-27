@@ -25,14 +25,14 @@
     <script src="heartbeat.js"></script>
     <script>
 
-        onload = function() {
-            var heartbeat = new Heartbeat();
-            var heartbeatElement = heartbeat.element;
-            heartbeatElement.classList.add('heartbeat');
-            document.body.appendChild(heartbeatElement);
-            document.querySelector('#onButton').onclick = () => heartbeat.on();
-            document.querySelector('#offButton').onclick = () => heartbeat.off();
-        }
+onload = function() {
+    var heartbeat = new Heartbeat(1000, 500); // <!-- add the flashing rate arguments
+    var heartbeatElement = heartbeat.element;
+    heartbeatElement.classList.add('heartbeat');
+    document.body.appendChild(heartbeatElement);
+    document.querySelector('#onButton').onclick = () => heartbeat.on();
+    document.querySelector('#offButton').onclick = () => heartbeat.off();
+}
 
     </script>
 </head>
