@@ -1,29 +1,29 @@
 class Heartbeat {
-
-constructor(onFlashRate, offFlashRate) { // <!-- add the flash rate parameters
-    this._element = document.createElement('div');
+  constructor(onFlashRate = 1000, offFlashRate = 500) {
+    // <!-- add the default values
+    this._element = document.createElement("div");
     this._intervalId = null;
     this.onFlashRate = onFlashRate;
     this.offFlashRate = offFlashRate;
-}
+  }
 
-on() {
+  on() {
     clearInterval(this._intervalId);
-    this._element.classList.remove('off');
+    this._element.classList.remove("off");
     this._intervalId = setInterval(() => {
-        this._element.classList.toggle('on');
-    }, this.onFlashRate); // <!-- swap the hard-coded value for the parameter
-}
+      this._element.classList.toggle("on");
+    }, 1000);
+  }
 
-off() {
+  off() {
     clearInterval(this._intervalId);
-    this._element.classList.remove('on');
+    this._element.classList.remove("on");
     this._intervalId = setInterval(() => {
-        this._element.classList.toggle('off');
-    }, this.offFlashRate); // <!-- swap the hard-coded value for the parameter
-}
+      this._element.classList.toggle("off");
+    }, 500);
+  }
 
-    get element() {
-        return this._element;
-    }
+  get element() {
+    return this._element;
+  }
 }
